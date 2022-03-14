@@ -1,5 +1,17 @@
 # Hi this is an Amazon clone
 
+Working: 
+- Products to cart
+- Checkout handle products 
+- Animations
+- Login/Register 
+
+To-Do: 
+- Unique register form
+- Proceed-to-checkout page
+- Stripe payment system
+- Footer
+
 
 
 
