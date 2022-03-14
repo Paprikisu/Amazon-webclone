@@ -1,12 +1,32 @@
 import React from 'react'
+import { Bounce, Slide, ToastContainer } from 'react-toastify'
 import "./Home.css"
 import logo from './Images/banner.png'
 import Product from './Product'
 
+
+
+
 function Home() {
+
+
   return (
     <div className="home">
         <div className="home_container">
+          <div className='home_toastContainer'>
+            <ToastContainer
+            closeButton={false}
+            position="top-right"
+            transition={Slide}
+            autoClose={4000}
+            hideProgressBar
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable={false}
+            pauseOnHover={false} />
+            
+          </div>
             <img className="home_image" src={logo} alt=""/>
 
             <div className="home_row">
@@ -85,6 +105,17 @@ function Home() {
               />
               
               
+              
+            </div>
+
+            <div className="home_row">
+            <Product
+              id="5910271"
+              title ="Cat tree | Ambidextrous feline housing unit"
+              price={58.39} 
+              image='https://i5.walmartimages.com/asr/d059a1b1-3b6a-4961-a398-41e5bddd3685.836d32d0fef576d6303cf190a942b52c.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff'
+              rating={2}
+              />
               
             </div>
             

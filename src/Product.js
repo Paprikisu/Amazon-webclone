@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Product.css";
 import { useStateValue } from './StateProvider';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { ForkLeft } from '@mui/icons-material';
 
+
+toast.configure()
 function Product({id, title, image, price, rating}) {
 
     const [{ basket }, dispatch] = useStateValue();
 
-    console.log('this is the basket >>>', basket)
+
+    // Console check for basket.
+    // console.log('this is the basket >>>', basket)
+
+
+
 
     const addToBasket = () => {
+
         // dispatch the item into the data layer
         dispatch({
             type: 'ADD_TO_BASKET',
@@ -18,14 +29,40 @@ function Product({id, title, image, price, rating}) {
                 image: image,
                 price: price,
                 rating: rating,
+                
 
             },
         });
+
+        toast(
+            
+            <div className='toast__container'>
+                <div className='toast__imageContainer'>
+                    <img className='toast__imageProduct' src={image}/>
+                    
+                </div> 
+              
+                <div>
+                Added "<strong>{title}</strong>" to basket
+                </div>
+            
+            </div>
+            
+            
+            
+
+        
+
+        )
+
+
     };
+
 
 
   return (
     <div className='product'>
+        
         <div className="product_info">
             <p>{title}</p>
             <p className='product_price'>
@@ -45,7 +82,8 @@ function Product({id, title, image, price, rating}) {
             
             </p>
         </div>
-        <img src= {image} alt=''/>
+        <img className='product_image' src= {image} alt=''/>
+
 
         <button onClick={addToBasket}>Add to Basket</button>
         

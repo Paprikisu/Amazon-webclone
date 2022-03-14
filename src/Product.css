@@ -11,12 +11,15 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+    transition: all 0.2s ease-out;
+
     
 
 
 
 
 }
+
 
 .product_rating {
     display: flex;
@@ -29,6 +32,7 @@
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
+    transition: all 0.5s;
 }
 .product > button {
     background: #f0c14b;
@@ -36,6 +40,7 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    font-size: 15px
 }
 
 .product_price{
@@ -47,3 +52,52 @@
     height: 100px;
     margin-bottom: 15px;
 }
+
+
+.product > button:active {
+   opacity: 0.8;
+    
+
+}
+
+.product_image:hover{
+
+    transform: scale(1.05);
+    
+}
+
+.Toastify__toast-container{
+    margin-top: 50px;
+    
+}
+
+.toast__container{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.toast__imageContainer{
+    padding-right: 10px;
+    display: flex;
+    max-width: 100px;
+    max-height: 100px;
+    
+}
+
+.toast__imageProduct {
+    
+    object-fit: contain;
+    min-width: 100px;
+    min-height: 100px;
+
+}
+
+
+
+
+
+

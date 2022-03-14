@@ -22,3 +22,10 @@
     margin-left: 20px;
 
 }
+
+.checkout_basket > h3 {
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 10px;
+}

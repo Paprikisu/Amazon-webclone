@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import './Header.css'
 import logo from './Images/amazonlogo.png'
@@ -5,6 +7,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 
 
 
@@ -12,7 +15,15 @@ import { useStateValue } from './StateProvider';
 
 function Header() {
 
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
+
+
 
   return (
     <div className='header'>
@@ -25,6 +36,7 @@ function Header() {
         <div className='header_search'>
             <input className="header_searchInput" type="tgext"></input>
             <SearchIcon className="header_searchIcon"/>
+            
 
           
 
@@ -33,17 +45,20 @@ function Header() {
         </div>
 
         <div className="header_nav">
-            <div className='header_option'>
+            <Link to={!user && '/login'}>
+            <div onClick={handleAuthentication} className='header_option'>
                 <span className='header_optionLineOne'>
-                    Hello Guest
+                    Hello {user ? user.email.slice(0, user.email.indexOf('@')): "Guest"}
                 </span>
                 <span className='header_optionLineTwo'>
-                    Sign in
+                    {user ? 'Sign Out' : 'Sign In'}
                 </span>
+                
                 
                 
 
             </div>
+            </Link>
             <div className='header_option'>
             <span className='header_optionLineOne'>
                     Returns
@@ -63,10 +78,16 @@ function Header() {
                 </span>
             </div>
 
-            <Link to="/checkout">
+            <Link to='/checkout'>
+                
+                
+            
+            
+        
+            
 
             <div className="header_optionBasket">
-                <ShoppingBasketIcon />
+                <ShoppingBasketIcon className='header_optionBasketIcon'/>
                 <span className="header_optionLineTwo header_basketCount">{basket?.length}</span>
 
             </div>
