@@ -3,11 +3,10 @@ import "./Product.css";
 import { useStateValue } from './StateProvider';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { ForkLeft } from '@mui/icons-material';
 
 
 toast.configure()
-function Product({id, title, image, price, rating}) {
+function Product({ id, title, image, price, rating }) {
 
     const [{ basket }, dispatch] = useStateValue();
 
@@ -29,29 +28,29 @@ function Product({id, title, image, price, rating}) {
                 image: image,
                 price: price,
                 rating: rating,
-                
+
 
             },
         });
 
         toast(
-            
+
             <div className='toast__container'>
                 <div className='toast__imageContainer'>
-                    <img className='toast__imageProduct' src={image}/>
-                    
-                </div> 
-              
-                <div>
-                Added "<strong>{title}</strong>" to basket
-                </div>
-            
-            </div>
-            
-            
-            
+                    <img className='toast__imageProduct' src={image} />
 
-        
+                </div>
+
+                <div>
+                    Added "<strong>{title}</strong>" to basket
+                </div>
+
+            </div>
+
+
+
+
+
 
         )
 
@@ -60,35 +59,35 @@ function Product({id, title, image, price, rating}) {
 
 
 
-  return (
-    <div className='product'>
-        
-        <div className="product_info">
-            <p>{title}</p>
-            <p className='product_price'>
-                <small>$</small>
-                <strong>{price}</strong>
-            <p>
-            <div className='product_rating'>
-                {Array(rating)
-                .fill()
-                .map((_, i) => (
-                    <p>⭐</p>
-                ))}
+    return (
+        <div className='product'>
 
-            
+            <div className="product_info">
+                <p>{title}</p>
+                <p className='product_price'>
+                    <small>$</small>
+                    <strong>{price}</strong>
+                    <p>
+                        <div className='product_rating'>
+                            {Array(rating)
+                                .fill()
+                                .map((_, i) => (
+                                    <p>⭐</p>
+                                ))}
+
+
+                        </div>
+                    </p>
+
+                </p>
             </div>
-            </p>
-            
-            </p>
+            <img className='product_image' src={image} alt='' />
+
+
+            <button onClick={addToBasket}>Add to Basket</button>
+
         </div>
-        <img className='product_image' src= {image} alt=''/>
-
-
-        <button onClick={addToBasket}>Add to Basket</button>
-        
-    </div>
-  )
+    )
 }
 
 export default Product

@@ -20,6 +20,10 @@
 
 }
 
+ul{
+    list-style-type: none;
+}
+
 
 .product_rating {
     display: flex;

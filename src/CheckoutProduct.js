@@ -1,21 +1,20 @@
 import React from 'react'
 import './CheckoutProduct.css'
 import { useStateValue } from './StateProvider';
-import FlipMove from 'react-flip-move';
 
 
 
 
 
 
-function CheckoutProduct({id, image, title, price, rating}) {
+function CheckoutProduct({ id, image, title, price, rating }) {
 
-    
+
 
 
     const [{ basket }, dispatch] = useStateValue();
 
-    const removeFromBasket = () =>{
+    const removeFromBasket = () => {
         // Remove the item from the basket
         dispatch({
             type: 'REMOVE_FROM_BASKET',
@@ -26,42 +25,42 @@ function CheckoutProduct({id, image, title, price, rating}) {
 
 
 
-  return (
-    <div className='checkoutProduct'>
+    return (
+        <div className='checkoutProduct'>
 
-        <img className='checkoutProduct_image' src={image} alt='' />
+            <img className='checkoutProduct_image' src={image} alt='' />
 
-        <div className='checkoutProduct_info'>
-            <p className='checkoutProduct_title'>{title}
-            </p>
-            <p className='checkoutProduct_price'>
-                <small>$</small>
-                <strong>{price}</strong>
-            </p>
-            <div className='checkoutProduct_rating'>
-                {Array(rating)
-                .fill()
-                .map((_, i) => (
-                    <p>⭐</p>
-                ))}
+            <div className='checkoutProduct_info'>
+                <p className='checkoutProduct_title'>{title}
+                </p>
+                <p className='checkoutProduct_price'>
+                    <small>$</small>
+                    <strong>{price}</strong>
+                </p>
+                <div className='checkoutProduct_rating'>
+                    {Array(rating)
+                        .fill()
+                        .map((_, i) => (
+                            <p>⭐</p>
+                        ))}
 
-            
 
-            
+
+
+                </div>
+                <button onClick={removeFromBasket}>Remove from basket</button>
+
+
             </div>
-            <button onClick={removeFromBasket}>Remove from basket</button>
-            
-                       
+
+
         </div>
-
-
-    </div>
     );
 
 
 }
 
-  
+
 
 
 

@@ -2,17 +2,19 @@ import React from 'react';
 import './App.css';
 import Header from './Header'
 import Home from './Home';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from './Login';
 import { useEffect } from 'react';
 import { auth } from "./firebase";
 import { useStateValue } from './StateProvider';
+import Footer from './Footer';
+import Payment from './Payment';
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
-  useEffect(() =>{
+  useEffect(() => {
     // will only run once when the app component loads
 
     auth.onAuthStateChanged(authUser => {
@@ -37,20 +39,22 @@ function App() {
   return (
     // BEM
     <Router>
-    <div className="app">
-      <Routes>
+      <div className="app">
+        <Routes>
 
-      <Route path="/login" element={[<Login/>]}/>
+          <Route path="/login" element={[<Login />]} />
 
-          <Route path="/checkout" element={[<Header/>, <Checkout/>]}/>
-          
-          <Route path="/" element={[<Header />, <Home />]}/>
+          <Route path="/checkout" element={[<Header />, <Checkout />, <Footer />]} />
+
+          <Route path="/" element={[<Header />, <Home />, <Footer />]} />
+
+          <Route path="/payment" element={[<Header/>, <Payment/>]}/>
 
 
-      </Routes>
+        </Routes>
 
-  
-    </div>
+
+      </div>
     </Router>
   );
 }

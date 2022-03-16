@@ -1,5 +1,6 @@
 .checkoutProduct{
     display: flex;
+    flex-direction: row;
     margin-top: 20px;
     margin-bottom: 20px;
 
