@@ -1,5 +1,6 @@
 ul{
     font-size: 15px;
+    font-weight: 400;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 50px;
@@ -49,6 +50,7 @@ li:first-of-type{
 
 .footer_trademark{
     padding-top: 20px;
+    padding-bottom: 20px;
     color: white;
     display: flex;
     justify-content: center;

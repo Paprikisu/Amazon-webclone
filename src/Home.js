@@ -4,11 +4,7 @@ import "./Home.css"
 import logo from './Images/banner.png'
 import Product from './Product'
 
-
-
-
 function Home() {
-
 
   return (
     <div className="home">
@@ -27,12 +23,13 @@ function Home() {
             pauseOnHover={false} />
 
         </div>
-        <img className="home_image" src={logo} alt="" />
+
+         <img className="home_image" src={logo} alt="" />
 
         <div className="home_row">
           <Product
             id="9128512"
-            title="Learn enough JavaScript to be dangerous | Complete JavaScript tutorial for dummies "
+            title="Learn enough JS & JQuery to be dangerous | Complete JavaScript tutorial for dummies "
             price={39.99}
             image='https://stackabuse.s3.amazonaws.com/media/best-javascript-books-for-all-skill-levels-9.jpg'
             rating={5}
@@ -108,13 +105,13 @@ function Home() {
 
         </div>
 
-        <div className="home_row">
+        <div className="home_row"> 
           <Product
-            id="5910271"
-            title="Cat tree | Ambidextrous feline housing unit"
-            price={58.39}
-            image='https://i5.walmartimages.com/asr/d059a1b1-3b6a-4961-a398-41e5bddd3685.836d32d0fef576d6303cf190a942b52c.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff'
-            rating={2}
+            id="5170271"
+            title="Samsung 75 TU6905 4K UHD Smart TV"
+            price={1799.99}
+            image='https://www.gigantti.fi/image/dv_web_D180001002924936/217021/samsung-75-tu6905-4k-uhd-smart-tv-ue75tu6905--pdp_zoom-3000--pdp_main-960.jpg'
+            rating={6}
           />
 
         </div>
