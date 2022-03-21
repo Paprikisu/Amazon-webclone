@@ -26,30 +26,20 @@ function Checkout() {
 
         </img>
 
-
-
-
-
-
         <div className='checkout_basket'>
           <h3>Hello, {user ? user.email.slice(0, user.email.indexOf('@')) : "Guest"}</h3>
-
-
-
-
-
 
 
           <h2 className="checkout_title"> Your Shopping Basket</h2>
 
 
-          <FlipMove 
-          staggerDurationBy={30}
-          maintainContainerHeight="true"
-           enterAnimation={{
-            from: ticketNotVisibleState,
-            to: {}
-          }}
+          <FlipMove
+            staggerDurationBy={30}
+            maintainContainerHeight="true"
+            enterAnimation={{
+              from: ticketNotVisibleState,
+              to: {}
+            }}
             leaveAnimation={{
               from: {},
               to: ticketNotVisibleState
@@ -73,21 +63,7 @@ function Checkout() {
 
           </FlipMove>
 
-
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
 
 
       </div>

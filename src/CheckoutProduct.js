@@ -7,7 +7,7 @@ import { useStateValue } from './StateProvider';
 
 
 
-function CheckoutProduct({ id, image, title, price, rating }) {
+function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
 
 
 
@@ -34,7 +34,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
                 <p className='checkoutProduct_title'>{title}
                 </p>
                 <p className='checkoutProduct_price'>
-                    <small>$</small>
+                    <small>€</small>
                     <strong>{price}</strong>
                 </p>
                 <div className='checkoutProduct_rating'>
@@ -48,7 +48,11 @@ function CheckoutProduct({ id, image, title, price, rating }) {
 
 
                 </div>
-                <button onClick={removeFromBasket}>Remove from basket</button>
+                {!hideButton &&(
+                    <button onClick={removeFromBasket}>Remove from basket</button>
+
+                )}
+                
 
 
             </div>
