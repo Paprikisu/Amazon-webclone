@@ -4,3 +4,4 @@ Amazon Clone
 - Login system
 - Animations
 - Integrated firebase database
+- Stripe payment system
