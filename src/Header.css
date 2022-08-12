@@ -85,3 +85,50 @@
     
     
 }
+
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+        position:relative;
+        width: 100%;
+        
+       
+        
+        
+        
+
+    
+        
+        
+        
+
+    }
+
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+
+@media screen and (max-width: 600px){
+    .header{
+        justify-content: center;
+        padding-bottom: 100px;
+        padding-right: 0;
+
+
+    }
+    .header > a{
+        margin-top: 50px;
+    }
+    .header_searchInput{
+        width: 30vh;
+    }
+        
+
+    
+    
+    
+}

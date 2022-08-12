@@ -53,10 +53,11 @@ function App() {
           <Route path="/checkout" element={[<Header />, <Checkout />, <Footer />]} />
 
           <Route path="/" element={[<Header />, <Home />, <Footer />]} />
-
+          <Route path ="/orders" element={[<Header/>, <Orders />, <Footer />]}/>
+                  
           <Route path="/payment" element={[<Header/>, <Elements stripe={promise}> <Payment/> </Elements>, <Footer />]}/>
 
-          <Route path="/orders" element = {[<Header/>, <Orders />, <Footer /> ]}/>
+          <Route path="/orders" element = {[<Header/>]}/>
 
 
         </Routes>
