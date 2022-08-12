@@ -13,11 +13,6 @@
     z-index: 1;
     transition: all 0.2s ease-out;
 
-    
-
-
-
-
 }
 
 ul{
@@ -100,6 +95,28 @@ ul{
 
 }
 
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+
+@media screen and (max-width: 1024px){
+    product{
+        
+        
+    }
+    
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+
+@media screen and (max-width: 600px){
+    product{
+        
+    }
+
+
+    
+    
+}
 
 
 

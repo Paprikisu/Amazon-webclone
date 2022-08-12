@@ -56,3 +56,42 @@ li:first-of-type{
     justify-content: center;
 }
 
+
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+
+@media screen and (max-width: 1024px){
+    .footer_list{
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+ 
+    }
+
+    .footer_trademark{
+        
+        align-items: center;
+    }
+    
+    
+    
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+
+@media screen and (max-width: 600px){
+    .footer{
+        
+
+        
+
+        
+
+    }
+    
+    
+
+    
+    
+    
+}
